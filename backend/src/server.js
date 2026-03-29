@@ -2,6 +2,8 @@ import express from "express";
 
 const app = express();
 
+console.log(process.env.PORT);
+
 app.get("/",(req, res)=>{
     res.status(200).json({ msg: "success from backend 12345678" });
 });
