@@ -10,4 +10,4 @@ app.get("/",(req, res)=>{
     res.status(200).json({ msg: "success from backend 12345678" });
 });
 
-app.listen(ENV.PORT,() => console.log ("server is running on port 3000"));
+app.listen(ENV.PORT,() => console.log ("server is running on port:",ENV.PORT));
