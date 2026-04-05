@@ -10,4 +10,4 @@ app.get("/health",(req, res)=>{
     res.status(200).json({ msg: "api is up and running" });
 });
 
-app.listen(ENV.PORT,() => conso.log ("server is running on port:",ENV.PORT));
+app.listen(ENVORT,() => console.log ("server is running on port:",ENV.PORT));
