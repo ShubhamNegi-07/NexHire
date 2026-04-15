@@ -4,11 +4,12 @@ import path from"path"
 import { ENV } from "./lib/env.js";
 
 const app = express();
+th",(req, res)=>{
+    res.status(200).json({ msg: "api is up and running" });
+});
 
-const __dirname = path.resolve()
-
-app.get("/health",(req, res)=>{
-    res.status(200 msg: "this is books endpoint" });
+app.get("/books",(req, res)=>{
+    res.status(200).json({ msg: "this is books endpoint" });
 });
 
 //make our app ready for deployment 
