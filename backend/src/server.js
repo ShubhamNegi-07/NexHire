@@ -1,5 +1,5 @@
 import express from "express";
-import path from"patth"
+import path from"path"
 
 import { ENV } from "./lib/env.js";
 
@@ -8,11 +8,7 @@ const app = express();
 const __dirname = path.resolve()
 
 app.get("/health",(req, res)=>{
-    res.status(200).json({ msg: "api is up and running" });
-});
-
-app.get("/health",(req, res)=>{
-    res.status(200).json({ msg: "this is book endpoint" });
+    res.status(200 msg: "this is books endpoint" });
 });
 
 //make our app ready for deployment 
