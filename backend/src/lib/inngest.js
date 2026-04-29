@@ -18,6 +18,7 @@ export const syncUser = inngest.createFunction(
     const userData = {
       clerkId: id,
       email: email_addresses[0]?.email_address,
+<<<<<<< HEAD
       name: `${first_name || ""} ${last_name || ""}`.trim(),
       profileImage: image_url,
     };
@@ -35,12 +36,25 @@ export const syncUser = inngest.createFunction(
       id: user.clerkId.toString(),
       name: user.name,
       image: user.profileImage,
+=======
+      name: `${first_name || ""} ${last_name || ""}`,
+      profileImage: image_url,
+    };
+
+    await User.create(newUser);
+
+    await upsertStreamUser({
+      id: newUser.clerkId.toString(),
+      name: newUser.name,
+      image: newUser.profileImage,
+>>>>>>> 9dddf1ffbafaa6257273d56273d306e0fc20a29e
     });
 
     console.log(`User ${user.name} synced successfully!`);
   }
 );
 
+<<<<<<< HEAD
 export const deleteUserFromDB = inngest.createFunction(
   {
     id: "delete-user-from-db",
@@ -57,3 +71,19 @@ export const deleteUserFromDB = inngest.createFunction(
 );
 
 export const functions = [syncUser, deleteUserFromDB];
+=======
+const deleteUserFromDB = inngest.createFunction(
+  { id: "delete-user-from-db" },
+  { event: "clerk/user.deleted" },
+  async ({ event }) => {
+    await connectDB();
+
+    const { id } = event.data;
+    await User.deleteOne({ clerkId: id });
+
+    await deleteStreamUser(id.toString());
+  }
+);
+
+export const functions = [syncUser, deleteUserFromDB];
+>>>>>>> 9dddf1ffbafaa6257273d56273d306e0fc20a29e
