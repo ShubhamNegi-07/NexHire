@@ -19,9 +19,6 @@ export const upsertStreamUser = async (userData) => {
   } catch (error) {
     console.error("Error upserting Stream user:", error);
   }
-<<<<<<< HEAD
-};
-=======
 };
 
 export const deleteStreamUser = async (userId) => {
@@ -32,4 +29,3 @@ export const deleteStreamUser = async (userId) => {
     console.error("Error deleting the Stream user:", error);
   }
 };
->>>>>>> 9dddf1ffbafaa6257273d56273d306e0fc20a29e
