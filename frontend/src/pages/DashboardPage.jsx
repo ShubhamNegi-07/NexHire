@@ -46,3 +46,23 @@ function DashboardPage() {
 
     return session.host?.clerkId === user.id || session.participant?.clerkId === user.id;
   };
+
+  return (
+    <>
+      <div className="min-h-screen bg-base-300">
+        <Navbar />
+        <WelcomeSection onCreateSession={() => setShowCreateModal(true)} />
+
+        {/* Grid layout */}
+        <div className="container mx-auto px-6 pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <StatsCards
+              activeSessionsCount={activeSessions.length}
+              recentSessionsCount={recentSessions.length}
+            />
+            <ActiveSessions
+              sessions={activeSessions}
+              isLoading={loadingActiveSessions}
+              isUserInSession={isUserInSession}
+            />
+          </div>
