@@ -62,3 +62,19 @@ function SessionPage() {
 
     if (session.status === "completed") navigate("/dashboard");
   }, [session, loadingSession, navigate]);
+
+  // update code when problem loads or changes
+  useEffect(() => {
+    if (problemData?.starterCode?.[selectedLanguage]) {
+      setCode(problemData.starterCode[selectedLanguage]);
+    }
+  }, [problemData, selectedLanguage]);
+
+  const handleLanguageChange = (e) => {
+    const newLang = e.target.value;
+    setSelectedLanguage(newLang);
+    // use problem-specific starter code
+    const starterCode = problemData?.starterCode?.[newLang] || "";
+    setCode(starterCode);
+    setOutput(null);
+  };
