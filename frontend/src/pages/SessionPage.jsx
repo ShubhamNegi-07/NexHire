@@ -122,3 +122,33 @@ function SessionPage() {
                           {session?.participant ? 2 : 1}/2 participants
                         </p>
                       </div>
+
+                      <div className="flex items-center gap-3">
+                        <span
+                          className={`badge badge-lg ${getDifficultyBadgeClass(
+                            session?.difficulty
+                          )}`}
+                        >
+                          {session?.difficulty.slice(0, 1).toUpperCase() +
+                            session?.difficulty.slice(1) || "Easy"}
+                        </span>
+                        {isHost && session?.status === "active" && (
+                          <button
+                            onClick={handleEndSession}
+                            disabled={endSessionMutation.isPending}
+                            className="btn btn-error btn-sm gap-2"
+                          >
+                            {endSessionMutation.isPending ? (
+                              <Loader2Icon className="w-4 h-4 animate-spin" />
+                            ) : (
+                              <LogOutIcon className="w-4 h-4" />
+                            )}
+                            End Session
+                          </button>
+                        )}
+                        {session?.status === "completed" && (
+                          <span className="badge badge-ghost badge-lg">Completed</span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
