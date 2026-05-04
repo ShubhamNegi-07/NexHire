@@ -54,3 +54,15 @@ function ProblemsPage() {
                     <p className="text-base-content/80 mb-3">{problem.description.text}</p>
                   </div>
                   {/* RIGHT SIDE */}
+
+                  <div className="flex items-center gap-2 text-primary">
+                    <span className="font-medium">Solve</span>
+                    <ChevronRightIcon className="size-5" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* STATS FOOTER */}
