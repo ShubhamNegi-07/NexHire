@@ -78,3 +78,47 @@ function SessionPage() {
     setCode(starterCode);
     setOutput(null);
   };
+
+  const handleRunCode = async () => {
+    setIsRunning(true);
+    setOutput(null);
+
+    const result = await executeCode(selectedLanguage, code);
+    setOutput(result);
+    setIsRunning(false);
+  };
+
+  const handleEndSession = () => {
+    if (confirm("Are you sure you want to end this session? All participants will be notified.")) {
+      // this will navigate the HOST to dashboard
+      endSessionMutation.mutate(id, { onSuccess: () => navigate("/dashboard") });
+    }
+  };
+
+  return (
+    <div className="h-screen bg-base-100 flex flex-col">
+      <Navbar />
+
+      <div className="flex-1">
+        <PanelGroup direction="horizontal">
+          {/* LEFT PANEL - CODE EDITOR & PROBLEM DETAILS */}
+          <Panel defaultSize={50} minSize={30}>
+            <PanelGroup direction="vertical">
+              {/* PROBLEM DSC PANEL */}
+              <Panel defaultSize={50} minSize={20}>
+                <div className="h-full overflow-y-auto bg-base-200">
+                  {/* HEADER SECTION */}
+                  <div className="p-6 bg-base-100 border-b border-base-300">
+                    <div className="flex items-start justify-between mb-3">
+                      <div>
+                        <h1 className="text-3xl font-bold text-base-content">
+                          {session?.problem || "Loading..."}
+                        </h1>
+                        {problemData?.category && (
+                          <p className="text-base-content/60 mt-1">{problemData.category}</p>
+                        )}
+                        <p className="text-base-content/60 mt-2">
+                          Host: {session?.host?.name || "Loading..."} •{" "}
+                          {session?.participant ? 2 : 1}/2 participants
+                        </p>
+                      </div>
