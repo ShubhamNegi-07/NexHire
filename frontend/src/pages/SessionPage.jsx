@@ -168,3 +168,21 @@ function SessionPage() {
                         </div>
                       </div>
                     )}
+
+                    {/* examples section */}
+                    {problemData?.examples && problemData.examples.length > 0 && (
+                      <div className="bg-base-100 rounded-xl shadow-sm p-5 border border-base-300">
+                        <h2 className="text-xl font-bold mb-4 text-base-content">Examples</h2>
+
+                        <div className="space-y-4">
+                          {problemData.examples.map((example, idx) => (
+                            <div key={idx}>
+                              <div className="flex items-center gap-2 mb-2">
+                                <span className="badge badge-sm">{idx + 1}</span>
+                                <p className="font-semibold text-base-content">Example {idx + 1}</p>
+                              </div>
+                              <div className="bg-base-200 rounded-lg p-4 font-mono text-sm space-y-1.5">
+                                <div className="flex gap-2">
+                                  <span className="text-primary font-bold min-w-[70px]">
+                                    Input:
+                                  </span>
