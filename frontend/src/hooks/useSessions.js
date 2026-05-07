@@ -28,3 +28,29 @@ export const useActiveSessions = () => {
     },
   });
 };
+
+export const useMyRecentSessions = () => {
+  const { getToken } = useAuth();
+
+  return useQuery({
+    queryKey: ["myRecentSessions"],
+    queryFn: async () => {
+      const token = await getToken();
+      return sessionApi.getMyRecentSessions(token);
+    },
+  });
+};
+
+export const useSessionById = (id) => {
+  const { getToken } = useAuth();
+
+  return useQuery({
+    queryKey: ["session", id],
+    queryFn: async () => {
+      const token = await getToken();
+      return sessionApi.getSessionById(id, token);
+    },
+    enabled: !!id,
+    refetchInterval: 5000,
+  });
+};
