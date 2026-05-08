@@ -54,3 +54,31 @@ export const useSessionById = (id) => {
     refetchInterval: 5000,
   });
 };
+
+export const useJoinSession = () => {
+  const { getToken } = useAuth();
+
+  return useMutation({
+    mutationKey: ["joinSession"],
+    mutationFn: async (id) => {
+      const token = await getToken();
+      return sessionApi.joinSession(id, token);
+    },
+    onSuccess: () => toast.success("Joined session successfully!"),
+    onError: (error) => toast.error(error.response?.data?.message || "Failed to join session"),
+  });
+};
+
+export const useEndSession = () => {
+  const { getToken } = useAuth();
+
+  return useMutation({
+    mutationKey: ["endSession"],
+    mutationFn: async (id) => {
+      const token = await getToken();
+      return sessionApi.endSession(id, token);
+    },
+    onSuccess: () => toast.success("Session ended successfully!"),
+    onError: (error) => toast.error(error.response?.data?.message || "Failed to end session"),
+  });
+};
