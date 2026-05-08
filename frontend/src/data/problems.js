@@ -65,3 +65,36 @@ class Solution {
         System.out.println(Arrays.toString(twoSum(new int[]{3, 3}, 6))); // Expected: [0, 1]
     }
 }`,
+    },
+    expectedOutput: {
+      javascript: "[0,1]\n[1,2]\n[0,1]",
+      python: "[0, 1]\n[1, 2]\n[0, 1]",
+      java: "[0, 1]\n[1, 2]\n[0, 1]",
+    },
+  },
+
+  "reverse-string": {
+    id: "reverse-string",
+    title: "Reverse String",
+    difficulty: "Easy",
+    category: "String • Two Pointers",
+    description: {
+      text: "Write a function that reverses a string. The input string is given as an array of characters s.",
+      notes: ["You must do this by modifying the input array in-place with O(1) extra memory."],
+    },
+    examples: [
+      {
+        input: 's = ["h","e","l","l","o"]',
+        output: '["o","l","l","e","h"]',
+      },
+      {
+        input: 's = ["H","a","n","n","a","h"]',
+        output: '["h","a","n","n","a","H"]',
+      },
+    ],
+    constraints: ["1 ≤ s.length ≤ 10⁵", "s[i] is a printable ascii character"],
+    starterCode: {
+      javascript: `function reverseString(s) {
+  // Write your solution here
+  
+}
