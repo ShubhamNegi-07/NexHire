@@ -126,3 +126,21 @@ class Solution {
         // Write your solution here
         
     }
+    
+    public static void main(String[] args) {
+        char[] test1 = {'h','e','l','l','o'};
+        reverseString(test1);
+        System.out.println(Arrays.toString(test1)); // Expected: [o, l, l, e, h]
+        
+        char[] test2 = {'H','a','n','n','a','h'};
+        reverseString(test2);
+        System.out.println(Arrays.toString(test2)); // Expected: [h, a, n, n, a, H]
+    }
+}`,
+    },
+    expectedOutput: {
+      javascript: '["o","l","l","e","h"]\n["h","a","n","n","a","H"]',
+      python: "['o', 'l', 'l', 'e', 'h']\n['h', 'a', 'n', 'n', 'a', 'H']",
+      java: "[o, l, l, e, h]\n[h, a, n, n, a, H]",
+    },
+  },
