@@ -270,3 +270,91 @@ print(maxSubArray([5,4,-1,7,8]))  # Expected: 23`,
         System.out.println(maxSubArray(new int[]{5,4,-1,7,8})); // Expected: 23
     }
 }`,
+    },
+    expectedOutput: {
+      javascript: "6\n1\n23",
+      python: "6\n1\n23",
+      java: "6\n1\n23",
+    },
+  },
+
+  "container-with-most-water": {
+    id: "container-with-most-water",
+    title: "Container With Most Water",
+    difficulty: "Medium",
+    category: "Array • Two Pointers",
+    description: {
+      text: "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).",
+      notes: [
+        "Find two lines that together with the x-axis form a container, such that the container contains the most water.",
+        "Return the maximum amount of water a container can store.",
+        "Notice that you may not slant the container.",
+      ],
+    },
+    examples: [
+      {
+        input: "height = [1,8,6,2,5,4,8,3,7]",
+        output: "49",
+        explanation:
+          "The vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water the container can contain is 49.",
+      },
+      {
+        input: "height = [1,1]",
+        output: "1",
+      },
+    ],
+    constraints: ["n == height.length", "2 ≤ n ≤ 10⁵", "0 ≤ height[i] ≤ 10⁴"],
+    starterCode: {
+      javascript: `function maxArea(height) {
+  // Write your solution here
+  
+}
+
+// Test cases
+console.log(maxArea([1,8,6,2,5,4,8,3,7])); // Expected: 49
+console.log(maxArea([1,1])); // Expected: 1`,
+      python: `def maxArea(height):
+    # Write your solution here
+    pass
+
+# Test cases
+print(maxArea([1,8,6,2,5,4,8,3,7]))  # Expected: 49
+print(maxArea([1,1]))  # Expected: 1`,
+      java: `class Solution {
+    public static int maxArea(int[] height) {
+        // Write your solution here
+        
+        return 0;
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(maxArea(new int[]{1,8,6,2,5,4,8,3,7})); // Expected: 49
+        System.out.println(maxArea(new int[]{1,1})); // Expected: 1
+    }
+}`,
+    },
+    expectedOutput: {
+      javascript: "49\n1",
+      python: "49\n1",
+      java: "49\n1",
+    },
+  },
+};
+
+export const LANGUAGE_CONFIG = {
+  javascript: {
+    name: "JavaScript",
+    icon: "/javascript.png",
+    monacoLang: "javascript",
+  },
+  python: {
+    name: "Python",
+    icon: "/python.png",
+    monacoLang: "python",
+  },
+  java: {
+    name: "Java",
+    icon: "/java.png",
+    monacoLang: "java",
+  },
+};
