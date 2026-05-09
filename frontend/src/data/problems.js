@@ -178,3 +178,95 @@ class Solution {
   // Write your solution here
   
 }
+
+// Test cases
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // Expected: true
+console.log(isPalindrome("race a car")); // Expected: false
+console.log(isPalindrome(" ")); // Expected: true`,
+      python: `def isPalindrome(s):
+    # Write your solution here
+    pass
+
+# Test cases
+print(isPalindrome("A man, a plan, a canal: Panama"))  # Expected: True
+print(isPalindrome("race a car"))  # Expected: False
+print(isPalindrome(" "))  # Expected: True`,
+      java: `class Solution {
+    public static boolean isPalindrome(String s) {
+        // Write your solution here
+        
+        return false;
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(isPalindrome("A man, a plan, a canal: Panama")); // Expected: true
+        System.out.println(isPalindrome("race a car")); // Expected: false
+        System.out.println(isPalindrome(" ")); // Expected: true
+    }
+}`,
+    },
+    expectedOutput: {
+      javascript: "true\nfalse\ntrue",
+      python: "True\nFalse\nTrue",
+      java: "true\nfalse\ntrue",
+    },
+  },
+
+  "maximum-subarray": {
+    id: "maximum-subarray",
+    title: "Maximum Subarray",
+    difficulty: "Medium",
+    category: "Array • Dynamic Programming",
+    description: {
+      text: "Given an integer array nums, find the subarray with the largest sum, and return its sum.",
+      notes: [],
+    },
+    examples: [
+      {
+        input: "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        output: "6",
+        explanation: "The subarray [4,-1,2,1] has the largest sum 6.",
+      },
+      {
+        input: "nums = [1]",
+        output: "1",
+        explanation: "The subarray [1] has the largest sum 1.",
+      },
+      {
+        input: "nums = [5,4,-1,7,8]",
+        output: "23",
+        explanation: "The subarray [5,4,-1,7,8] has the largest sum 23.",
+      },
+    ],
+    constraints: ["1 ≤ nums.length ≤ 10⁵", "-10⁴ ≤ nums[i] ≤ 10⁴"],
+    starterCode: {
+      javascript: `function maxSubArray(nums) {
+  // Write your solution here
+  
+}
+
+// Test cases
+console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])); // Expected: 6
+console.log(maxSubArray([1])); // Expected: 1
+console.log(maxSubArray([5,4,-1,7,8])); // Expected: 23`,
+      python: `def maxSubArray(nums):
+    # Write your solution here
+    pass
+
+# Test cases
+print(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))  # Expected: 6
+print(maxSubArray([1]))  # Expected: 1
+print(maxSubArray([5,4,-1,7,8]))  # Expected: 23`,
+      java: `class Solution {
+    public static int maxSubArray(int[] nums) {
+        // Write your solution here
+        
+        return 0;
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4})); // Expected: 6
+        System.out.println(maxSubArray(new int[]{1})); // Expected: 1
+        System.out.println(maxSubArray(new int[]{5,4,-1,7,8})); // Expected: 23
+    }
+}`,
