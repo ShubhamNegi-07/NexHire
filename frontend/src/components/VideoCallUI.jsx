@@ -29,3 +29,37 @@ function VideoCallUI({ chatClient, channel }) {
       </div>
     );
   }
+
+  return (
+    <div className="h-full flex gap-3 relative str-video">
+      <div className="flex-1 flex flex-col gap-3">
+        {/* Participants count badge and Chat Toggle */}
+        <div className="flex items-center justify-between gap-2 bg-base-100 p-3 rounded-lg shadow">
+          <div className="flex items-center gap-2">
+            <UsersIcon className="w-5 h-5 text-primary" />
+            <span className="font-semibold">
+              {participantCount} {participantCount === 1 ? "participant" : "participants"}
+            </span>
+          </div>
+          {chatClient && channel && (
+            <button
+              onClick={() => setIsChatOpen(!isChatOpen)}
+              className={`btn btn-sm gap-2 ${isChatOpen ? "btn-primary" : "btn-ghost"}`}
+              title={isChatOpen ? "Hide chat" : "Show chat"}
+            >
+              <MessageSquareIcon className="size-4" />
+              Chat
+            </button>
+          )}
+        </div>
+
+        <div className="flex-1 bg-base-300 rounded-lg overflow-hidden relative">
+          <SpeakerLayout />
+        </div>
+
+        <div className="bg-base-100 p-3 rounded-lg shadow flex justify-center">
+          <CallControls onLeave={() => navigate("/dashboard")} />
+        </div>
+      </div>
+
+      {/* CHAT SECTION */}
