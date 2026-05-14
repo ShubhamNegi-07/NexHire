@@ -8,3 +8,11 @@ export const sessionApi = {
     });
     return response.data;
   },
+
+  // 2. Active Sessions ke liye sirf token chahiye
+  getActiveSessions: async (token) => {
+    const response = await axiosInstance.get("/sessions/active", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response.data;
+  },
