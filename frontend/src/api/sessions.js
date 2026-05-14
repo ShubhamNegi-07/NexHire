@@ -24,3 +24,11 @@ export const sessionApi = {
     });
     return response.data;
   },
+
+  // 4. Get Session By ID
+  getSessionById: async (id, token) => {
+    const response = await axiosInstance.get(`/sessions/${id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response.data;
+  },
