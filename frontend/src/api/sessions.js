@@ -16,3 +16,11 @@ export const sessionApi = {
     });
     return response.data;
   },
+
+  // 3. My Recent Sessions
+  getMyRecentSessions: async (token) => {
+    const response = await axiosInstance.get("/sessions/my-recent", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response.data;
+  },
