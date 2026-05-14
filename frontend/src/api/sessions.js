@@ -32,3 +32,11 @@ export const sessionApi = {
     });
     return response.data;
   },
+
+  // 5. Join Session
+  joinSession: async (id, token) => {
+    const response = await axiosInstance.post(`/sessions/${id}/join`, {}, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response.data;
+  },
