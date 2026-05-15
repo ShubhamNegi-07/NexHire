@@ -48,3 +48,12 @@ export const sessionApi = {
     });
     return response.data;
   },
+
+  // 7. Get Stream Token (Chat ke liye)
+  getStreamToken: async (token) => {
+    const response = await axiosInstance.get(`/sessions/stream-token`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response.data;
+  },
+};
